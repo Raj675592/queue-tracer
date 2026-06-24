@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client';
 
-const SERVER_URL = import.meta.env.VITE_SERVER_URL || 'http://localhost:5000';
+const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
 // One shared socket instance for the whole app. autoConnect stays true so
 // both the Reception and PatientQueue screens reconnect on their own after
