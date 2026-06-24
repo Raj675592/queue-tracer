@@ -1,19 +1,8 @@
+#:schema node_modules/wrangler/config-schema.json
 name = "queue-tracer"
-main = "worker.js"
+main = "server.js"
 compatibility_date = "2026-06-24"
-
-[[containers]]
-class_name = "QueueTracerContainer"
-image = "./Dockerfile"
-max_instances = 1
-
-[[durable_objects.bindings]]
-name = "QUEUE_CONTAINER"
-class_name = "QueueTracerContainer"
-
-[[migrations]]
-tag = "v1"
-new_sqlite_classes = ["QueueTracerContainer"]
+compatibility_flags = [ "nodejs_compat" ] # 👈 ADD THIS LINE
 
 [vars]
 ENV = "production"
