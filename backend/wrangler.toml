@@ -1,8 +1,19 @@
-#:schema node_modules/wrangler/config-schema.json
 name = "queue-tracer"
-main = "server.js" # Removed the "backend/" prefix
+main = "worker.js"
 compatibility_date = "2026-06-24"
 
-# Global environment variables accessible in your code via `env.VARIABLE_NAME`
+[[containers]]
+class_name = "QueueTracerContainer"
+image = "./Dockerfile"
+max_instances = 1
+
+[[durable_objects.bindings]]
+name = "QUEUE_CONTAINER"
+class_name = "QueueTracerContainer"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["QueueTracerContainer"]
+
 [vars]
 ENV = "production"
