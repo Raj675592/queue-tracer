@@ -1,6 +1,6 @@
 #:schema node_modules/wrangler/config-schema.json
 name = "queue-tracer"
-main = "src/server.js" # Change to "src/index.ts" if you use TypeScript
+main = "backend/server.js" # Change to "src/index.ts" if you use TypeScript
 compatibility_date = "2026-06-24"
 
 # Global environment variables accessible in your code via `env.VARIABLE_NAME`
