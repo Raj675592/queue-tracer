@@ -8,11 +8,7 @@ const connectDB = require('./db');
 const { registerQueueHandlers, buildSnapshot, todayKey, ensureDefaultClinic } = require('./socket/queueHandlers');
 
 const PORT = process.env.PORT ;
-// const CLIENT_ORIGIN = (process.env.CLIENT_ORIGIN).split(',');
-const CLIENT_ORIGIN = [
-  'https://queuetracerfrontend-3w67oy17.b4a.run',
-  'http://localhost:5173'
-];
+const CLIENT_ORIGIN = (process.env.CLIENT_ORIGIN).split(',');
 
 async function main() {
   await connectDB();
