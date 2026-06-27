@@ -42,7 +42,7 @@ async function main() {
 
   registerQueueHandlers(io);
 
-  httpServer.listen(PORT,'0.0.0.0', () => {
+  httpServer.listen(PORT, () => {
     console.log(`Queue Cure backend listening on port ${PORT}`);
   });
 }
